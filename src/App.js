@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
+import Controls from "./Controls";
 
 const App = (props) => {
     return (
@@ -8,8 +9,7 @@ const App = (props) => {
             <hr/>
 
             Count : {props.myCount}
-            <button onClick={props.plus}> Plus </button>
-            <button onClick={props.minus}> Minus </button>
+           <Controls />
         </div>
     );
 };
@@ -18,9 +18,6 @@ const mapStateToProps = state => ({
     myCount: state.count,
     appVersion: state.appVersion
 });
-const mapDispatchToProps = dispatch => ({
-    plus: () => dispatch({type: "PLUS"}),
-    minus: () => dispatch({type: 'MINUS'})
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default connect(mapStateToProps)(App);
