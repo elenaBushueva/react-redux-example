@@ -5,19 +5,19 @@ import Controls from "./Controls";
 const App = (props) => {
     return (
         <div>
-            Version : {props.appVersion}
+            App Version : {props.appVersion}
             <hr/>
 
-            Count : {props.myCount}
-           <Controls />
+            Counter : {props.myCount}
+
+            <Controls/>
         </div>
     );
 };
 
 const mapStateToProps = state => ({
     myCount: state.count,
-    appVersion: state.appVersion
-});
-
+    appVersion: state.appVersion,
+})
 
 export default connect(mapStateToProps)(App);
